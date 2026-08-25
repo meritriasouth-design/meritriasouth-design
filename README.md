@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meritria South & Co. LLC | International Trade Consulting</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f5;
+            color: #1d1d1b;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 20px 60px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1d1d1b;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #8c6a3b;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 80vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 10%;
+
+            background:
+                linear-gradient(
+                    rgba(20, 20, 20, 0.65),
+                    rgba(20, 20, 20, 0.65)
+                ),
+                url("hero.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: #eeeeee;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background-color: #8c6a3b;
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            background-color: #70532e;
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            max-width: 700px;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-image {
+            min-height: 400px;
+
+            background-image: url("about.jpg");
+            background-size: cover;
+            background-position: center;
+
+            border-radius: 3px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background-color: #f7f7f5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 40px;
+
+            border: 1px solid #e5e5e5;
+
+            transition: transform 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process {
+            background-color: #1d1d1b;
+            color: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .process-step {
+            border-top: 1px solid #555;
+            padding-top: 25px;
+        }
+
+        .process-number {
+            font-size: 14px;
+            color: #b18b55;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .process-step p {
+            color: #bbbbbb;
+        }
+
+
+        /* =========================
+           MARKETS
+        ========================= */
+
+        .markets {
+            background-color: #ffffff;
+        }
+
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .market {
+            padding: 35px;
+
+            background-color: #f7f7f5;
+
+            border-left: 4px solid #8c6a3b;
+        }
+
+        .market h3 {
+            margin-bottom: 10px;
+        }
+
+        .market p {
+            color: #666;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            text-align: center;
+            background-color: #8c6a3b;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            font-size: 18px;
+        }
+
+        .cta .button {
+            background-color: white;
+            color: #1d1d1b;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #111111;
+            color: #aaaaaa;
+
+            padding: 40px 10%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 20px 30px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .markets-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                min-height: 75vh;
+                padding: 60px 7%;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 34px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+            MERITRIA SOUTH & CO.
+        </div>
+
+        <nav>
+            <a href="#about">Nosotros</a>
+            <a href="#services">Servicios</a>
+            <a href="#process">Modelo</a>
+            <a href="#markets">Mercados</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Connecting Markets.<br>
+                Creating Opportunities.
+            </h1>
+
+            <p>
+                Consultora especializada en intermediación comercial B2B
+                y desarrollo de oportunidades de abastecimiento
+                en mercados internacionales.
+            </p>
+
+            <a href="#contact" class="button">
+                Hablemos
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h2 class="section-title">
+                    Comercio internacional,
+                    pensado de otra manera.
+                </h2>
+
+                <p>
+                    Desde Meritria South & Co. identificamos oportunidades
+                    comerciales que surgen de las brechas estructurales
+                    de abastecimiento existentes entre mercados.
+                </p>
+
+                <p>
+                    Analizamos mercados, detectamos necesidades de
+                    abastecimiento y conectamos empresas compradoras
+                    con productores capaces de satisfacerlas.
+                </p>
+
+                <p>
+                    Nuestro modelo combina inteligencia comercial,
+                    desarrollo de negocios e intermediación internacional
+                    para generar relaciones B2B de largo plazo.
+                </p>
+
+            </div>
+
+            <div class="about-image"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section class="services" id="services">
+
+        <h2 class="section-title">
+            Qué hacemos
+        </h2>
+
+        <p class="section-subtitle">
+            Trabajamos sobre toda la cadena de generación de una
+            oportunidad comercial internacional.
+        </p>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <h3>
+                    Market Intelligence
+                </h3>
+
+                <p>
+                    Identificamos mercados con necesidades concretas
+                    de abastecimiento y analizamos oportunidades
+                    comerciales potenciales.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <h3>
+                    Supplier Development
+                </h3>
+
+                <p>
+                    Detectamos productores y fabricantes capaces de
+                    responder a las necesidades identificadas,
+                    evaluando producto, capacidad y competitividad.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <h3>
+                    B2B Intermediation
+                </h3>
+
+                <p>
+                    Facilitamos el vínculo comercial entre compradores
+                    internacionales y productores, acompañando el
+                    desarrollo de la operación.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================= -->
+
+    <section class="process" id="process">
+
+        <h2 class="section-title">
+            Nuestro modelo
+        </h2>
+
+        <p class="section-subtitle">
+            No esperamos a que aparezca un pedido.
+            Buscamos activamente dónde existe una oportunidad.
+        </p>
+
+
+        <div class="process-grid">
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Detectamos
+                </h3>
+
+                <p>
+                    Analizamos mercados internacionales para identificar
+                    brechas de abastecimiento y oportunidades comerciales.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Investigamos
+                </h3>
+
+                <p>
+                    Identificamos compradores, requerimientos,
+                    especificaciones y condiciones de mercado.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Conectamos
+                </h3>
+
+                <p>
+                    Encontramos productores que puedan responder
+                    competitivamente a esa necesidad.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Desarrollamos
+                </h3>
+
+                <p>
+                    Acompañamos la relación comercial hasta convertir
+                    la oportunidad en una operación sostenible.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MARKETS
+    ========================= -->
+
+    <section class="markets" id="markets">
+
+        <h2 class="section-title">
+            Sectores y mercados
+        </h2>
+
+        <p class="section-subtitle">
+            Nuestro enfoque es transversal y se adapta a las necesidades
+            específicas de cada mercado y categoría.
+        </p>
+
+
+        <div class="markets-grid">
+
+            <div class="market">
+
+                <h3>
+                    Food & Ingredients
+                </h3>
+
+                <p>
+                    Ingredientes, materias primas y productos
+                    destinados a la industria alimentaria.
+                </p>
+
+            </div>
+
+
+            <div class="market">
+
+                <h3>
+                    Consumer Products
+                </h3>
+
+                <p>
+                    Productos destinados al consumo masivo y
+                    canales de distribución internacionales.
+                </p>
+
+            </div>
+
+
+            <div class="market">
+
+                <h3>
+                    Industrial Supply
+                </h3>
+
+                <p>
+                    Productos e insumos destinados a empresas
+                    industriales y cadenas de suministro.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="cta" id="contact">
+
+        <h2>
+            Let's build the next opportunity.
+        </h2>
+
+        <p>
+            Si sos productor, importador o una empresa que busca
+            nuevas oportunidades de abastecimiento internacional,
+            hablemos.
+        </p>
+
+        <a
+            href="mailto:contact@meritriasouth.com"
+            class="button">
+            Contactar
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div>
+            <strong>MERITRIA SOUTH & CO. LLC</strong>
+        </div>
+
+        <div>
+            International Trade & B2B Development
+        </div>
+
+        <div>
+            © 2026 Meritria South & Co.
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
